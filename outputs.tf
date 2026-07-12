@@ -1,3 +1,7 @@
+output "netapp_volume_quota_rules_id" {
+  description = "Map of id values across all netapp_volume_quota_rules, keyed the same as var.netapp_volume_quota_rules"
+  value       = { for k, v in azurerm_netapp_volume_quota_rule.netapp_volume_quota_rules : k => v.id }
+}
 output "netapp_volume_quota_rules_location" {
   description = "Map of location values across all netapp_volume_quota_rules, keyed the same as var.netapp_volume_quota_rules"
   value       = { for k, v in azurerm_netapp_volume_quota_rule.netapp_volume_quota_rules : k => v.location }
